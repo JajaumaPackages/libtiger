@@ -1,6 +1,6 @@
 Name:           libtiger
 Version:        0.3.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Rendering library for Kate streams using Pango and Cairo
 
 Group:          System Environment/Libraries
@@ -85,10 +85,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files doc
 %defattr(-,root,root,-)
-%doc examples __doc/*
+%doc examples __doc/html
 
 
 %changelog
+* Fri Feb  5 2010 Nicolas Chauvet <kwizart@fedoraproject.org> - 0.3.3-3
+- Only pick __doc/html in the doc subpackage.
+
 * Tue Jan 26 2010 Nicolas Chauvet <kwizart@fedoraproject.org> - 0.3.3-2
 - Split doc subpackage
 
