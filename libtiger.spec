@@ -1,6 +1,6 @@
 Name:           libtiger
 Version:        0.3.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Rendering library for Kate streams using Pango and Cairo
 
 Group:          System Environment/Libraries
@@ -11,7 +11,9 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libkate-devel >= 0.2.7
 BuildRequires:  pango-devel
+%ifarch %{ix86} x86_64 ppc ppc64 s390x
 BuildRequires:  valgrind
+%endif
 BuildRequires:  doxygen
 
 
@@ -89,6 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Apr  1 2011 Dan Horák <dan[at]danny.cz> - 0.3.4-2
+- valgrind exists only on selected architectures
+
 * Sun Mar 27 2011 Nicolas Chauvet <kwizart@gmail.com> - 0.3.4-1
 - Update to 0.3.4
 
