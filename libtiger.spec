@@ -1,6 +1,6 @@
 Name:           libtiger
 Version:        0.3.4
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Rendering library for Kate streams using Pango and Cairo
 
 Group:          System Environment/Libraries
@@ -11,7 +11,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libkate-devel >= 0.2.7
 BuildRequires:  pango-devel
-%ifarch %{ix86} x86_64 ppc ppc64 s390x
+%ifarch %{ix86} x86_64 ppc ppc64 s390x %{arm}
 BuildRequires:  valgrind
 %endif
 BuildRequires:  doxygen
@@ -91,6 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Aug 12 2013 Nicolas Chauvet <kwizart@gmail.com> - 0.3.4-7
+- Set the current valgrind arches
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.4-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
