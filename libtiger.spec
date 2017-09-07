@@ -1,12 +1,12 @@
 Name:           libtiger
 Version:        0.3.4
-Release:        14%{?dist}
+Release:        15%{?dist}
 Summary:        Rendering library for Kate streams using Pango and Cairo
 
 Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            http://libtiger.googlecode.com
-Source0:        http://libtiger.googlecode.com/files/libtiger-%{version}.tar.gz
+Source0:        https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libtiger/libtiger-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libkate-devel >= 0.2.7
@@ -91,6 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Sep 07 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.3.4-15
+- Fix download URL
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.3.4-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
